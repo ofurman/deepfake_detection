@@ -39,3 +39,33 @@ python3 preprocess.py --ffmpeg_path=$(which ffmpeg)
 python3 inference.py 0
 python3 eval.py
 ```
+
+# Instruction without docker (tested on python3.9):
+Install apt packages:
+```
+sudo apt-get install -y --fix-missing build-essential  
+sudo apt-get install -y --fix-missing cmake
+sudo apt-get install -y --fix-missing ffmpeg
+sudo apt-get install -y --fix-missing libopencv-dev
+```
+
+then install requirements.txt and `fairseq`
+```
+python3 -m venv vnev
+source venv/bin/activate
+pip install --no-cache-dir -r requirements.txt
+pip install --editable av_hubert/fairseq
+```
+
+Then move this to venv:
+```
+cp av_hubert/avhubert/abstract.py venv/lib/python3.9/site-packages/skvideo/io/
+```
+
+Commands to evaluate model
+```
+cd av_hubert/avhubert/
+python3 preprocess.py --ffmpeg_path=$(which ffmpeg)
+python3 inference.py 0
+python3 eval.py
+```
