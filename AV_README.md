@@ -16,9 +16,9 @@ cd ../../
 
 Now, please do the following commands:
 ```
-mv preprocess.py av_hubert/avhubert/
-mv inference.py av_hubert/avhubert/
-mv eval.py av_hubert/avhubert/
+mv preprocess.py ../av_hubert/avhubert/
+mv inference.py ../av_hubert/avhubert/
+mv eval.py ../av_hubert/avhubert/
 ```
 
 Moreover, as skvideo and fairseq is deprecated you should use the following command:
